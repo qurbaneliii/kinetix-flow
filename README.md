@@ -201,8 +201,6 @@ Modelin performansını ölçmək üçün istifadə etdiyimiz üç əsas metrik 
 
 **2. Feature Importance:**
 
-![image.png](attachment:216e7448-66f2-4348-af72-638c57a544ae:image.png)
-
 Bu qrafik bizə modelin sərnişin sayını təxmin edərkən hansı faktorlara üstünlük verdiyini göstərir:
 
 - **Əsas Faktor (rolling_mean_3_days):** Model sərnişin sayını müəyyən edərkən 36.1% payla ən çox son 3 günün ortalama trendinə güvənir. Bu, sistemin qısamüddətli dinamikaya dərhal uyğunlaşdığını göstərir.
@@ -212,16 +210,12 @@ Bu qrafik bizə modelin sərnişin sayını təxmin edərkən hansı faktorlara 
 
 **3. Actual vs. Predicted:**
 
-![image.png](attachment:8c86cb20-5277-4a2b-9364-ec7ad486b731:image.png)
-
 Bu qrafik modelin real həyatdakı sınağını vizual olaraq əks etdirir:
 
 - **Xronoloji Uyğunluq:** Göy (Actual) və narıncı (Predicted) xətlər demək olar ki, sinxron hərəkət edir. Model sərnişin sayındakı kəskin artışları (peaks) və azalma nöqtələrini (troughs) tam vaxtında tutur.
 - **Trend Analizi:** Diqqət etsəniz, model hətta kəskin sıçrayışların baş verdiyi günlərdə belə trayektoriyanı itirmir. Bu, modelin **Time-Series Alignment** (zaman sırası düzləndirilməsi) məsələsini mükəmməl həll etdiyini və real-time rejimdə işləməyə hazır olduğunu göstərir.
 
 **4. Residual Analysis: Xətaların Paylanması**
-
-![image.png](attachment:aa4cdba4-cda7-4f38-8642-2f7b1c328f96:image.png)
 
 Xətaların analizi (**Residuals Analysis**) modelin "sağlamlığını" yoxlamaq üçün ən texniki üsuldur:
 
@@ -252,8 +246,6 @@ Kodun ilk hissəsində biz fərqli mənbələrdən gələ biləcək sütun adlar
 
 **Total Daily Passenger Flow Over Time**
 
-![image.png](attachment:abf1985f-d95a-42ed-b088-9628842543f9:image.png)
-
 Bu qrafik Bakı metrosunun bir il ərzindəki "nəbzini" göstərir.
 
 - **Göy xətt (Daily Total):** Gündəlik sərnişin sayının dəyişməsidir. Göründüyü kimi, həftəlik kəskin dalğalanmalar var (iş günləri yüksək, istirahət günləri aşağı).
@@ -262,16 +254,12 @@ Bu qrafik Bakı metrosunun bir il ərzindəki "nəbzini" göstərir.
 
 **Baku Metro Seasonality Analysis**
 
-![image.png](attachment:d9353907-ae4a-4095-bcdc-d24516e14e75:image.png)
-
 Bu iki qrafik sərnişin axınının həftəlik və aylıq ritmini izah edir.
 
 - **Sol tərəf (Day of Week):** Ən çox yüklənmə Çərşənbə axşamı (Tuesday) müşahidə olunur. Bazar günü (Sunday) isə sərnişin sayı kəskin şəkildə azalır (təxminən 25 mindən 15 minə düşür).
 - **Sağ tərəf (Month):** Oktyabr və Dekabr ayları ən gərgin aylardır. Avqust ayı isə ilin ən sakin ayıdır. Bu məlumat modelin **seasonality** trendlərini öyrənməsi üçün təməl bazadır.
 
 **Station Traffic Comparison**
-
-![image.png](attachment:91909f5e-5197-4dc2-9461-789d1fe029bb:image.png)
 
 Bu qrafik stansiyalar arasındakı "güc nisbətini" göstərir.
 
@@ -280,8 +268,6 @@ Bu qrafik stansiyalar arasındakı "güc nisbətini" göstərir.
 - **Məntiq:** Bu fərqlilik modelə hər stansiya üçün fərdi çəki dərəcəsi (**weight**) təyin etməyə imkan verir.
 
 **Kinetix Heatmap**
-
-![image.png](attachment:142e107b-77e2-45bf-932c-420fda978075:image.png)
 
 Bu istilik xəritəsi (Heatmap) günün saatları ilə həftənin günləri arasındakı kəsişməni göstərir.
 
@@ -297,8 +283,6 @@ Bu EDA mərhələsi bizə sübut etdi ki, Bakı metrosunun datası həm **tempor
 3. Koroğlu və 28 May kimi stansiyalar model üçün prioritetdir.
 
 İndi biz tam əminliklə növbəti mərhələyə — **Feature Engineering** və **Model Training** hissəsinə keçə bilərik, çünki datanın bizə nə demək istədiyini artıq vizual olaraq başa düşmüşük.
-
-![image.png](attachment:c9aec38b-e0b3-413f-a760-fb550ecb510d:image.png)
 
 **1. Monthly Usage Trend (Yuxarı Sol: Bar Chart)**
 
@@ -356,8 +340,6 @@ Hesablamalar göstərir ki, stansiyalarımız orta hesabla öz tutumlarını də
 
 **High-Density Event Rate Heatmaps**
 
-![image.png](attachment:e0cae1d6-2ea2-4009-bc8f-e7c3f41ec97c:image.png)
-
 Bu qrafik bizə sıxlığın zamana (ay və saat) görə necə paylandığını **faceted heatmap** formatında göstərir.
 
 - **Nəyi göstərir:** Həftənin hər günü üçün aylıq (Y oxu) və saatlıq (X oxu) sıxlıq dərəcəsini.
@@ -366,8 +348,6 @@ Bu qrafik bizə sıxlığın zamana (ay və saat) görə necə paylandığını 
     - Həftəsonları (Sat, Sun) qrafiklərdəki rəng intensivliyinin dəyişməməsi, Bakı metrosunun hətta istirahət günlərində belə yüksək yük altında işlədiyini, lakin iş günlərinə nisbətən bu yüklənmənin daha "idarəolunan" (lower variance) olduğunu göstərir.
 
 **Average Consecutive High-Density Duration**
-
-![image.png](attachment:94710578-dd8e-4620-9f28-b5dd73b8fbdd:image.png)
 
 Bu bar-chart stansiyaların "nə qədər müddət dalbadal" qırmızı zonada qaldığını ölçür. Bu, **Operational Logistics** üçün ən vacib göstəricidir.
 
@@ -385,10 +365,10 @@ Kinetix AI artıq bir **Decision Support System** (qərar dəstək sistemi) kimi
 
 **Top 10 Busiest Stations by Mean Density per Month**
 
-![image.png](attachment:e8408227-37e3-47c8-b62d-381993f96e1a:image.png)
-
 Bu qrafiklər ilin hər bir ayı üçün ən çox yüklənən 10 stansiyanı **Comfort Band** rəngləri ilə təsnif edir.
 
 - **Nəyi göstərir:** Hər ay üçün stansiyaların orta sıxlıq dərəcəsini.
 - **Analiz:** Bütün aylarda bütün sütunların **Qırmızı (Red > 75%)** olması, seçilmiş ən sıx 10 stansiyanın heç vaxt "Yaşıl" və ya "Sarı" zonaya düşmədiyini göstərir.
 - **Pik Ayları:** Dekabr (Month 12) və Yanvar (Month 1) aylarında Koroğlu və 28 May stansiyalarında orta sıxlıq 12.0-ni keçir. Bu, tutumun **1200%** aşılması deməkdir.
+
+- Kaggle link: https://www.kaggle.com/models/qurbanlifeyzullayev/baku-metro-passenger-flow-forecasting-model
